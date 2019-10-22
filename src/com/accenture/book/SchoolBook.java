@@ -24,15 +24,15 @@ public class SchoolBook extends Book {
     }
 
     @Override
-    public void setPrice(double price) {
+    public double getPrice() {
         if (getNumOfCopies() >= NUMBER_COPIES_LOWER_RANGE && getNumOfCopies() < NUMBER_COPIES_MIDDLE_RANGE){
-            price = price - (price * PURCHASE_DISCOUNT_LOWEST);
+            price -= (price * PURCHASE_DISCOUNT_LOWEST);
         } else if (getNumOfCopies() >= NUMBER_COPIES_MIDDLE_RANGE && getNumOfCopies() < NUMBER_COPIES_HIGH_RANGE){
-            price = price - (price * PURCHASE_DISCOUNT_MIDDLE);
+            price -= (price * PURCHASE_DISCOUNT_MIDDLE);
         } else if (getNumOfCopies() >= NUMBER_COPIES_HIGH_RANGE){
-            price = price - (price * PURCHASE_DISCOUNT_HIGHEST);
+            price -= (price * PURCHASE_DISCOUNT_HIGHEST);
         }
-        super.price = price;
+        return price;
     }
 
     @Override

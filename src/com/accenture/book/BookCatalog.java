@@ -25,8 +25,12 @@ public class BookCatalog {
     }
 
     //Need to take in what we are sorting by (name, price, id)
+    //Can use the sorting from java classes
     public LinkedList<Book> sort(String sortMethod){
         LinkedList<Book> sortedBooks = new LinkedList<>();
+
+        //use wireframe
+
         return sortedBooks;
     }
 
@@ -36,15 +40,15 @@ public class BookCatalog {
             System.out.println("Please provide a search input");
         }
         for(Book book : allBooks){
-            if (searchType.equals(Book.SEARCH_ID)){
+            if (searchType.equalsIgnoreCase(Book.SEARCH_ID)){
                 if(Integer.valueOf(token) == book.getId()){
                     foundBooks.add(book);
                 }
-            } else if (searchType.equals(Book.SEARCH_NAME)){
+            } else if (searchType.equalsIgnoreCase(Book.SEARCH_NAME)){
                 if(token.equals(book.getName())){
                     foundBooks.add(book);
                 }
-            } else if (searchType.equals(Book.SEARCH_DESCRIPTION)){
+            } else if (searchType.equalsIgnoreCase(Book.SEARCH_DESCRIPTION)){
                 if (token.equals(book.getDescription())){
                     foundBooks.add(book);
                 }

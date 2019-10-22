@@ -1,22 +1,23 @@
 package com.accenture.cd;
 
-public abstract class Cd {
+public abstract class CD {
 
     private static int id;
     private int iterator = 1;
     protected String name;
     protected String genre;
     protected String description;
-    protected int numSongs;
     protected double price;
+    public static final String SEARCH_NAME = "NAME";
+    public static final String SEARCH_GENRE = "GENRE";
+    public static final String SEARCH_DESCRIPTION = "DESCRIPTION";
 
-    public Cd(String name, String genre, String description, int numSongs, double price){
+    public CD(String name, String genre, String description, double price){
         id = iterator;
         iterator++;
         this.name = name;
         this.genre = genre;
         this.description = description;
-        this.numSongs = numSongs;
         this.price = price;
     }
 
@@ -48,14 +49,6 @@ public abstract class Cd {
         this.description = description;
     }
 
-    public int getNumSongs() {
-        return numSongs;
-    }
-
-    public void setNumSongs(int numSongs) {
-        this.numSongs = numSongs;
-    }
-
     public double getPrice() {
         return price;
     }
@@ -65,6 +58,6 @@ public abstract class Cd {
     }
 
     public String toString(){
-        return "ID: " +getId()+ ", Name: " +getName()+ ", Genre: " +getGenre()+ ", Description: " +getDescription()+ ", Number of songs:" +getNumSongs();
+        return "ID: " +getId()+ ", Name: " +getName()+ ", Genre: " +getGenre()+ ", Description: " +getDescription();
     }
 }
